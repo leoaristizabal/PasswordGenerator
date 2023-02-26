@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator by Leo</title>
+    <link rel="stylesheet" href="./style.css">
+
+    
+</head>
+<body>
+    <div class="main-card">
+        <h3>Password Generator</h3>
+
+        <div class="input-copy">
+            <div class="password">
+                <span id="pw-text">Zf0#vl3O_92C</span>
+                <a href=""><img src="./images/copyicon.png" alt=""></a>
+            </div>
+        </div>
+        
+        <input type="range" min="4" max="20" id="range" step="1" onchange="showVal(this.value)">
+        <p class="display-pw-size">Password Size: <span>12</span></p>
+
+        <div class="select-option">
+            <input type="checkbox" id="upper" checked/>
+            <label for="upper">Contain Uppercase Letters </label>
+        </div>
+
+        <div class="select-option">
+            <input type="checkbox" id="lower" checked/>
+            <label for="lower">Contain Lowercase Letters </label>
+        </div>
+
+        <div class="select-option">
+            <input type="checkbox" id="number" checked/>
+            <label for="number">Contain Numbers</label>
+        </div>
+
+        <div class="select-option">
+            <input type="checkbox" id="symbol" checked/>
+            <label for="symbol">Contain Symbols</label>
+        </div>
+
+        <button class="generate">
+            Generate
+        </button>
+
+    </div>
+</body>
+</html>
