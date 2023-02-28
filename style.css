@@ -1,45 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --white: #242026;
+  --purple: #0b3a09;
+  --blue-light:#9bacdd;
+  --blue-dark:#131315;
+  --green:#3476da;
+}
+
+body{
+  background-color: var(--blue-dark);
+  color: white;
+}
 /* Estilos para la caja principal */
 .main-card {
-    margin: 50px auto;
-    padding: 20px;
-    width: 400px;
-    background: linear-gradient(to bottom right, #2979ff, #00c6ff);
-    border-radius: 10px;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
-    text-align: center;
-  }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  width: 400px;
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 3px 15px 25px var(--green);
+  text-align: center;
+}
+
   
   /* Estilos para el título */
   .main-card h3 {
     font-size: 24px;
-    color: #ffffff;
-    margin-bottom: 20px;
+    margin: 0 0 1.2rem;
   }
+
+  .main-card h3 span{
+    background: linear-gradient(to right,var(--green), var(--blue-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
   
   /* Estilos para la contraseña generada */
   .password {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #ffffff;
-    border-radius: 5px;
-    padding: 5px 10px;
-    margin-bottom: 20px;
+    
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    margin-bottom: 2rem;
+    border: none;
+    border-bottom: 1px solid var(--green);
+    outline: none;
+    background: transparent;
+    
   }
-  
+
+  #range{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    
+  }
   .password img {
-    width: 25px;
+    width: 1.2rem;
+    padding-left: .25rem;
+    color: white;
   }
   
   /* Estilos para los controles deslizantes */
   .input-copy {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    
   }
   
   .display-pw-size {
     margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
   }
   
   /* Estilos para las opciones de selección */
@@ -48,27 +93,76 @@
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 10px;
-    color: #ffffff;
+    margin-top: 12px;
   }
   
   .select-option input[type="checkbox"] {
     margin-right: 10px;
   }
+
   
   /* Estilos para el botón de generar */
-  .generate {
-    background-color: #ffffff;
-    color: #2979ff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    padding: 10px;
-    cursor: pointer;
-    margin-top: 20px;
+  button{
+    width: 100%;
+    padding: 10px 20px;
+    color: var(--green);
+    font-size: 14px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.5s;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    border: 1px solid var(--green);
+    background: transparent;
+    border-radius: 3px;
+}
+
+button:hover{
+    background-color: var(--green);
+    color: #fff;
+    border-radius:  5px;
+    box-shadow: 0 0 5px var(--green), 0 0 25px var(--green), 0 0 50px var(--green), 0 0 100px var(--green);
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 480px) {
+  .main-card {
+    width: 85%;
+    padding: 20px;
   }
-  
-  .generate:hover {
-    background-color: #2979ff;
-    color: #ffffff;
+
+  .main-card h3 {
+    font-size: 20px;
+    margin-bottom: 1rem;
   }
-  
+
+  .password {
+ 
+    font-size: 14px;
+    margin-bottom: .1rem;
+  }
+
+  #range {
+    justify-content: center;
+    margin-bottom: .5rem;
+  }
+
+  .input-copy {
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .display-pw-size {
+    margin-top: 3px;
+  }
+
+  .select-option {
+    margin-top: .5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  button {
+    font-size: 14px;
+    margin-top: 1.5rem;
+  }
+}
